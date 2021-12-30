@@ -7,7 +7,7 @@ import pages.MainPage;
 
 public class MainRegressionTests extends BaseTest {
      MainPage mainPage = new MainPage();
-    LoginPage loginPage = new LoginPage();
+     LoginPage loginPage = new LoginPage();
 
     @Test
     public void LogInTest() throws InterruptedException {
