@@ -4,10 +4,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
+import pages.RegistrationPage;
 
 public class MainRegressionTests extends BaseTest {
      MainPage mainPage = new MainPage();
      LoginPage loginPage = new LoginPage();
+     RegistrationPage regPage = new RegistrationPage();
+
+     String generatedEmail = generateEmail();
 
     @Test
     public void LogInTest() throws InterruptedException {
@@ -15,6 +19,18 @@ public class MainRegressionTests extends BaseTest {
         loginPage.logIn(userEmail, userPassword);
         Thread.sleep(1000);
         Assert.assertEquals(mainPage.getUserCurrency(), "AMD");
+    }
+
+    @Test
+    public void RegistrationTest(){
+        mainPage.clickOnLoginButton();
+        loginPage.clickOnSignUpButton();
+        regPage.typeInEmailField(generatedEmail);
+        regPage.typeInPasswordField("Test1234");
+        regPage.typeInConfirmPasswordField("Test1234");
+        regPage.selectCurrency("AMD");
+        regPage.typeInpromoCodeField("promoCode");
+        regPage.clickOnNextButton();
     }
 
     @Test

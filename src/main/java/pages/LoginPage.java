@@ -8,6 +8,7 @@ public class LoginPage {
     private SelenideElement emailField = $(By.id("userName"));
     private SelenideElement passwordField = $(By.id("password"));
     private SelenideElement signInButton = $("form > button");
+    private SelenideElement signUpButton = $(":nth-child(1) > div > button > div");
 
     public LoginPage typeInEmailField(String email) {
         emailField.sendKeys(email);
@@ -22,6 +23,10 @@ public class LoginPage {
     public LoginPage clickOnSigninButton() {
         // signInButton.waitUntil(Condition.enabled, 10000);
         signInButton.click();
+        return this;
+    }
+    public LoginPage clickOnSignUpButton(){
+        signUpButton.click();
         return this;
     }
 
