@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 abstract public class BaseTest {
     protected static final String BASE_URL = "http://spv2-stage.betcoapps.com/";
-    
+
 
   private void setUp(){
       WebDriverManager.chromedriver().setup();
