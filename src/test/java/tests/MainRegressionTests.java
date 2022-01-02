@@ -9,30 +9,22 @@ import pages.RegistrationPage;
 import java.util.Random;
 
 public class MainRegressionTests extends BaseTest {
-     MainPage mainPage = new MainPage();
-     LoginPage loginPage = new LoginPage();
-     RegistrationPage regPage = new RegistrationPage();
+    MainPage mainPage = new MainPage();
+    LoginPage loginPage = new LoginPage();
+    RegistrationPage regPage = new RegistrationPage();
 
-    protected String userEmail  = "davit.vardanyan@betconstruct.com";
+    protected String userEmail = "davit.vardanyan@betconstruct.com";
     protected String userPassword = "Test1234";
 
-    public String generateEmail(){
+    public String generateEmail() {
         Random rand = new Random();
         int upperbound = 10000;
         int intRandom = rand.nextInt(upperbound);
-        String email = "utest202101+"+intRandom+"@gmail.com";
+        String email = "utest202101+" + intRandom + "@gmail.com";
         return email;
-      }
-     String generatedEmail = generateEmail();
+    }
 
-     public static void sleep(long milliseconds) {
-        try {
-          Thread.sleep(milliseconds);
-        } catch (InterruptedException e) {
-          Thread.currentThread().interrupt();
-          throw new RuntimeException(e);
-        }
-      }
+    String generatedEmail = generateEmail();
 
     @Test
     public void LogInTest() throws InterruptedException {

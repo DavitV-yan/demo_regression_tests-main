@@ -24,23 +24,23 @@ public class MainPage extends LoginPage {
 
     private SelenideElement oddsFormatDropDown = $("footer > div:nth-child(2) > div:nth-child(2) > div");
 
-    public String getCurrentUrl(){
-        String currentUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
-        return currentUrl;
+    private String getCurrentUrl() {
+        return WebDriverRunner.getWebDriver().getCurrentUrl();
     }
 
-    public MainPage clickOnLoginButton() {
+    public void clickOnLoginButton() {
         loginButton.click();
-        return this;
     }
-        public String getUserCurrency(){
-        String currency =  userCurrencyType.getText();
-            return currency;
+
+    public String getUserCurrency() {
+        return userCurrencyType.getText();
     }
+
     public String getSportRoute() {
         sportRoute.click();
         return getCurrentUrl();
     }
+
     public String getInPlayRoute() {
         inPlayRoute.click();
         return getCurrentUrl();
@@ -50,34 +50,38 @@ public class MainPage extends LoginPage {
         esportRoute.click();
         return getCurrentUrl();
     }
+
     public String getCasinoRoute() {
         casinoRoute.click();
         return getCurrentUrl();
     }
+
     public String getLiveCasinoRoute() {
         liveCasinoRoute.click();
         return getCurrentUrl();
     }
+
     public String getGamesRoute() {
         gamesRoute.click();
         return getCurrentUrl();
     }
+
     public String getPromotionsRoute() {
         promotionsRoute.click();
         return getCurrentUrl();
     }
+
     public String getVirtualSportsRoute() {
         virtualSportsRoute.click();
         return getCurrentUrl();
     }
 
-    public MainPage changeLanguage(){
+    public void changeLanguage() {
         languageDropDown.click();
         sleep(2000);
         SelenideElement elem = $(By.cssSelector("ul[data-testid='select-testid'] > li:nth-child(3)"));
         elem.click();
-       sleep(5000);
-        return this;
+        sleep(5000);
     }
 
 //    public MainPage clickOnUserIcon() {

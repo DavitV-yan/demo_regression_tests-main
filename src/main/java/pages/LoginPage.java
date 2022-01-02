@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
@@ -10,23 +11,20 @@ public class LoginPage {
     private SelenideElement signInButton = $("form > button");
     private SelenideElement signUpButton = $(":nth-child(1) > div > button > div");
 
-    public LoginPage typeInEmailField(String email) {
+    public void typeInEmailField(String email) {
         emailField.sendKeys(email);
-        return this;
     }
 
-    public LoginPage typeInPasswordField(String password) {
+    public void typeInPasswordField(String password) {
         passwordField.sendKeys(password);
-        return this;
     }
 
-    public LoginPage clickOnSigninButton() {
+    public void clickOnSigninButton() {
         signInButton.click();
-        return this;
     }
-    public LoginPage clickOnSignUpButton(){
+
+    public void clickOnSignUpButton() {
         signUpButton.click();
-        return this;
     }
 
     public LoginPage logIn(String email, String password) {
