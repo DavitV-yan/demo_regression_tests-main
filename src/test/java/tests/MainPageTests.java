@@ -9,6 +9,6 @@ public class MainPageTests extends BaseTest {
 
     @Test
     public void changeLanguageTest() {
-        mainPage.changeLanguage();
+        mainPage.changeAppLanguage("'Հայերեն'");
     }
 }

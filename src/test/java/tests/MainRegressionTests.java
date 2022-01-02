@@ -6,7 +6,7 @@ import pages.MainPage;
 
 public class MainRegressionTests extends BaseTest {
     MainPage mainPage = new MainPage();
-    
+
     protected String userEmail = "davit.vardanyan@betconstruct.com";
     protected String userPassword = "Test1234";
     private String userCurrency = "AMD";
@@ -65,7 +65,6 @@ public class MainRegressionTests extends BaseTest {
     public void virtualSportsRouteTest() {
         Assert.assertEquals(mainPage.getVirtualSportsRoute(), virtualSports);
     }
-
 
 //    @Test
 //    public void changeAppLanguageToEnglish() {

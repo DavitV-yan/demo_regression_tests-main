@@ -1,14 +1,12 @@
 package pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
-
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends LoginPage {
-
     private SelenideElement loginButton = $("div > button");
     private SelenideElement userCurrencyType = $("[data-testid=balance-currency]");
     private SelenideElement sportRoute = $("nav > a:nth-child(1)");
@@ -19,9 +17,7 @@ public class MainPage extends LoginPage {
     private SelenideElement gamesRoute = $("nav > a:nth-child(6)");
     private SelenideElement promotionsRoute = $("nav > a:nth-child(7)");
     private SelenideElement virtualSportsRoute = $("nav > a:nth-child(8)");
-    private SelenideElement languageDropDown = $("footer > div:nth-child(2) > div:nth-child(1) > div");
-    private SelenideElement selectLanguage = $("ul[data-testid='select-testid'] > li:nth-child(3)");
-
+    private ElementsCollection dropDown = $$(".selectLabel"); //first element for language drop-down second element for odds format drop-down
     private SelenideElement oddsFormatDropDown = $("footer > div:nth-child(2) > div:nth-child(2) > div");
 
     private String getCurrentUrl() {
@@ -77,13 +73,18 @@ public class MainPage extends LoginPage {
         return getCurrentUrl();
     }
 
-    public void changeLanguage() {
-        languageDropDown.click();
-        sleep(2000);
-        SelenideElement elem = $(By.cssSelector("ul[data-testid='select-testid'] > li:nth-child(3)"));
-        elem.click();
-        sleep(5000);
+    public void clickOnLanguageDropDown(){
+        dropDown.first().click();
     }
+
+    public void changeAppLanguage(String languaգe){
+        clickOnLanguageDropDown();
+        SelenideElement selectLanguage = $x("//li[text()="+ languaգe +"]");
+        selectLanguage.click();
+        System.out.println("tttt  "+ languaգe);
+
+    }
+
 
 //    public MainPage clickOnUserIcon() {
 //        userIcon.click();
