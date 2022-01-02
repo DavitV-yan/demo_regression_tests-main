@@ -13,6 +13,15 @@ public class MainRegressionTests extends BaseTest {
 
      String generatedEmail = generateEmail();
 
+     public static void sleep(long milliseconds) {
+        try {
+          Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          throw new RuntimeException(e);
+        }
+      }
+
     @Test
     public void LogInTest() throws InterruptedException {
         mainPage.clickOnLoginButton();
@@ -21,17 +30,20 @@ public class MainRegressionTests extends BaseTest {
         Assert.assertEquals(mainPage.getUserCurrency(), "AMD");
     }
 
-    @Test
-    public void RegistrationTest(){
-        mainPage.clickOnLoginButton();
-        loginPage.clickOnSignUpButton();
-        regPage.typeInEmailField(generatedEmail);
-        regPage.typeInPasswordField("Test1234");
-        regPage.typeInConfirmPasswordField("Test1234");
-        regPage.selectCurrency("AMD");
-        regPage.typeInpromoCodeField("promoCode");
-        regPage.clickOnNextButton();
-    }
+    // @Test
+    // public void RegistrationTest(){
+    //     mainPage.clickOnLoginButton();
+    //     sleep(1000);
+    //     loginPage.clickOnSignUpButton();
+    //     regPage.typeInEmailField(generatedEmail);
+    //     regPage.typeInPasswordField("Test1234");
+    //     regPage.typeInConfirmPasswordField("Test1234");
+    //     regPage.selectCurrency("AMD");
+    //     regPage.typeInpromoCodeField("promoCode");
+    //     regPage.clickOnNextButton();
+    //     regPage.selectBirthDate(2, 3, 1);
+    //     sleep(10000);
+    // }
 
     @Test
     public void sportRouteTest() {

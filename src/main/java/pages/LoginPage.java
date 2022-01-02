@@ -21,7 +21,6 @@ public class LoginPage {
     }
 
     public LoginPage clickOnSigninButton() {
-        // signInButton.waitUntil(Condition.enabled, 10000);
         signInButton.click();
         return this;
     }

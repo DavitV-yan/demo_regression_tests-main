@@ -2,6 +2,9 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+
+import org.openqa.selenium.By;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends LoginPage {
@@ -16,6 +19,10 @@ public class MainPage extends LoginPage {
     private SelenideElement gamesRoute = $("nav > a:nth-child(6)");
     private SelenideElement promotionsRoute = $("nav > a:nth-child(7)");
     private SelenideElement virtualSportsRoute = $("nav > a:nth-child(8)");
+    private SelenideElement languageDropDown = $("footer > div:nth-child(2) > div:nth-child(1) > div");
+    private SelenideElement selectLanguage = $("ul[data-testid='select-testid'] > li:nth-child(3)");
+
+    private SelenideElement oddsFormatDropDown = $("footer > div:nth-child(2) > div:nth-child(2) > div");
 
     public String getCurrentUrl(){
         String currentUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
@@ -62,6 +69,15 @@ public class MainPage extends LoginPage {
     public String getVirtualSportsRoute() {
         virtualSportsRoute.click();
         return getCurrentUrl();
+    }
+
+    public MainPage changeLanguage(){
+        languageDropDown.click();
+        sleep(2000);
+        SelenideElement elem = $(By.cssSelector("ul[data-testid='select-testid'] > li:nth-child(3)"));
+        elem.click();
+       sleep(5000);
+        return this;
     }
 
 //    public MainPage clickOnUserIcon() {
