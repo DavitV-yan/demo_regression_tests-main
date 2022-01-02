@@ -6,11 +6,20 @@ import pages.LoginPage;
 import pages.MainPage;
 import pages.RegistrationPage;
 
+import java.util.Random;
+
 public class MainRegressionTests extends BaseTest {
      MainPage mainPage = new MainPage();
      LoginPage loginPage = new LoginPage();
      RegistrationPage regPage = new RegistrationPage();
 
+    public String generateEmail(){
+        Random rand = new Random();
+        int upperbound = 10000;
+        int intRandom = rand.nextInt(upperbound);
+        String email = "utest202101+"+intRandom+"@gmail.com";
+        return email;
+      }
      String generatedEmail = generateEmail();
 
      public static void sleep(long milliseconds) {
