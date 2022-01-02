@@ -23,16 +23,6 @@ public class MainRegressionTests extends BaseTest {
     private String promotionsRoute = "http://spv2-stage.betcoapps.com/promotions";
     private String virtualSports = "http://spv2-stage.betcoapps.com/virtual-sports";
 
-    public String generateEmail() {
-        Random rand = new Random();
-        int upperbound = 10000;
-        int intRandom = rand.nextInt(upperbound);
-        String email = "utest202101+" + intRandom + "@gmail.com";
-        return email;
-    }
-
-    String generatedEmail = generateEmail();
-
     @Test
     public void LogInTest() throws InterruptedException {
         mainPage.clickOnLoginButton()

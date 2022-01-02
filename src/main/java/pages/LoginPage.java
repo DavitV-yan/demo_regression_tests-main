@@ -1,13 +1,11 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
-    private SelenideElement emailField = $(By.id("userName"));
-    private SelenideElement passwordField = $(By.id("password"));
+    private SelenideElement emailField = $("#userName");
+    private SelenideElement passwordField = $("#password");
     private SelenideElement signInButton = $("form > button");
     private SelenideElement signUpButton = $(":nth-child(1) > div > button > div");
 
