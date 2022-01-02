@@ -13,6 +13,9 @@ public class MainRegressionTests extends BaseTest {
      LoginPage loginPage = new LoginPage();
      RegistrationPage regPage = new RegistrationPage();
 
+    protected String userEmail  = "davit.vardanyan@betconstruct.com";
+    protected String userPassword = "Test1234";
+
     public String generateEmail(){
         Random rand = new Random();
         int upperbound = 10000;
