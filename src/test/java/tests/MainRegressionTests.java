@@ -2,18 +2,14 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LoginPage;
 import pages.MainPage;
-import pages.RegistrationPage;
-
-import java.util.Random;
 
 public class MainRegressionTests extends BaseTest {
     MainPage mainPage = new MainPage();
-
+    
     protected String userEmail = "davit.vardanyan@betconstruct.com";
     protected String userPassword = "Test1234";
-    private  String userCurrency = "AMD";
+    private String userCurrency = "AMD";
     private String sportRoute = "http://spv2-stage.betcoapps.com/";
     private String inPlayRoute = "http://spv2-stage.betcoapps.com/live";
     private String esportRoute = "http://spv2-stage.betcoapps.com/esport";
@@ -29,21 +25,6 @@ public class MainRegressionTests extends BaseTest {
                 .logIn(userEmail, userPassword);
         Assert.assertEquals(mainPage.getUserCurrency(), userCurrency);
     }
-
-    // @Test
-    // public void RegistrationTest(){
-    //     mainPage.clickOnLoginButton();
-    //     sleep(1000);
-    //     loginPage.clickOnSignUpButton();
-    //     regPage.typeInEmailField(generatedEmail);
-    //     regPage.typeInPasswordField("Test1234");
-    //     regPage.typeInConfirmPasswordField("Test1234");
-    //     regPage.selectCurrency("AMD");
-    //     regPage.typeInpromoCodeField("promoCode");
-    //     regPage.clickOnNextButton();
-    //     regPage.selectBirthDate(2, 3, 1);
-    //     sleep(10000);
-    // }
 
     @Test
     public void sportRouteTest() {

@@ -30,7 +30,7 @@ public class MainPage extends LoginPage {
 
     public MainPage clickOnLoginButton() {
         loginButton.click();
-        return new MainPage();
+        return this;
     }
 
     public String getUserCurrency() {
