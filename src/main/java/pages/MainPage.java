@@ -34,7 +34,6 @@ public class MainPage extends LoginPage {
     }
 
     public String getUserCurrency() {
-        sleep(1000);
         return userCurrencyType.getText();
     }
 
