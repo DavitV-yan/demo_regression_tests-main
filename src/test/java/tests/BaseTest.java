@@ -29,7 +29,7 @@ abstract public class BaseTest {
 
 
     @BeforeMethod
-    public void beforeMethod() {
+    public void start() {
         setUp();
     }
 
