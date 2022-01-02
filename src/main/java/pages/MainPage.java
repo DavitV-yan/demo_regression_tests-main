@@ -28,11 +28,13 @@ public class MainPage extends LoginPage {
         return WebDriverRunner.getWebDriver().getCurrentUrl();
     }
 
-    public void clickOnLoginButton() {
+    public MainPage clickOnLoginButton() {
         loginButton.click();
+        return new MainPage();
     }
 
     public String getUserCurrency() {
+        sleep(1000);
         return userCurrencyType.getText();
     }
 
