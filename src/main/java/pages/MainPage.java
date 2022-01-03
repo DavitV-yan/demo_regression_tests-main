@@ -7,6 +7,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends LoginPage {
+    public String language;
     private SelenideElement loginButton = $("div > button");
     private SelenideElement userCurrencyType = $("[data-testid=balance-currency]");
     private SelenideElement sportRoute = $("nav > a:nth-child(1)");
@@ -17,8 +18,11 @@ public class MainPage extends LoginPage {
     private SelenideElement gamesRoute = $("nav > a:nth-child(6)");
     private SelenideElement promotionsRoute = $("nav > a:nth-child(7)");
     private SelenideElement virtualSportsRoute = $("nav > a:nth-child(8)");
-    private ElementsCollection dropDown = $$(".selectLabel"); //first element for language drop-down second element for odds format drop-down
+
+    //first element for language drop-down second element for odds format drop-down
+    private ElementsCollection dropDown = $$(".selectLabel");
     private SelenideElement oddsFormatDropDown = $("footer > div:nth-child(2) > div:nth-child(2) > div");
+
 
     private String getCurrentUrl() {
         return WebDriverRunner.getWebDriver().getCurrentUrl();
@@ -77,9 +81,9 @@ public class MainPage extends LoginPage {
         dropDown.first().click();
     }
 
-    public void changeAppLanguage(String languaգe){
+    public void changeAppLanguage(String language){
         clickOnLanguageDropDown();
-        SelenideElement selectLanguage = $x("//li[text()="+ languaգe +"]");
+        SelenideElement selectLanguage = $x("//li[text()="+language+"]");
         selectLanguage.click();
     }
 
