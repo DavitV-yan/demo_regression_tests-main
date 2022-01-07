@@ -18,6 +18,7 @@ public class MainPage extends LoginPage {
     private SelenideElement gamesRoute = $("nav > a:nth-child(6)");
     private SelenideElement promotionsRoute = $("nav > a:nth-child(7)");
     private SelenideElement virtualSportsRoute = $("nav > a:nth-child(8)");
+    private SelenideElement textForCheckingLanguage = $x("//*[@id='layout']/footer/div[1]/div[1]/div/p");
 
     //first element for language drop-down second element for odds format drop-down
     private ElementsCollection dropDown = $$(".selectLabel");
@@ -87,6 +88,9 @@ public class MainPage extends LoginPage {
         selectLanguage.click();
     }
 
+    public String getTextfromMainPage(){
+        return textForCheckingLanguage.getText();
+    }
 
 //    public MainPage clickOnUserIcon() {
 //        userIcon.click();
