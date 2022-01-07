@@ -27,10 +27,10 @@ abstract public class BaseTest {
         sleep(500);
     }
 
-    @AfterMethod
-    public void tearDown() {
-        sleep(3000);
-        closeWebDriver();
-    }
+//    @AfterMethod
+//    public void tearDown() {
+//        sleep(3000);
+//        closeWebDriver();
+//    }
 
 }
