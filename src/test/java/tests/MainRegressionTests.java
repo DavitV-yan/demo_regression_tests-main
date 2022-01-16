@@ -3,12 +3,9 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PageProvider;
+import static data.TestData.*;
 
 public class MainRegressionTests extends BaseTest implements PageProvider {
-
-    protected String userEmail = "davit.vardanyan@betconstruct.com";
-    protected String userPassword = "Test1235";
-    private String userCurrency = "AMD";
     private String sportRoute = "http://spv2-stage.betcoapps.com/";
     private String inPlayRoute = "http://spv2-stage.betcoapps.com/live";
     private String esportRoute = "http://spv2-stage.betcoapps.com/esport";
@@ -21,8 +18,8 @@ public class MainRegressionTests extends BaseTest implements PageProvider {
     @Test
     public void LogInTest() {
         mainPage.clickOnLoginButton()
-                .logIn(userEmail, userPassword);
-        Assert.assertEquals(mainPage.getUserCurrency(), userCurrency);
+                .logIn(USER_EMAIL, USER_PASSWORD);
+        Assert.assertEquals(mainPage.getUserCurrency(), USER_CURRENCIES[0]);
     }
 
     @Test

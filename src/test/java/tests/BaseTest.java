@@ -6,9 +6,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import static com.codeborne.selenide.Selenide.*;
+import static data.TestData.BASE_URL;
 
 abstract public class BaseTest {
-    protected static final String BASE_URL = "http://spv2-stage.betcoapps.com/";
 
     @BeforeMethod
     public void start() {
@@ -30,7 +30,9 @@ abstract public class BaseTest {
     @AfterMethod
     public void tearDown() {
         sleep(3000);
+        closeWindow();
         closeWebDriver();
+
     }
 
 }
