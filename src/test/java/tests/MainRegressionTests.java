@@ -15,49 +15,49 @@ public class MainRegressionTests extends BaseTest implements PageProvider {
     private String promotionsRoute = "http://spv2-stage.betcoapps.com/promotions";
     private String virtualSports = "http://spv2-stage.betcoapps.com/virtual-sports";
 
-    @Test
+    @Test (groups = "regressionTest")
     public void LogInTest() {
         mainPage.clickOnLoginButton()
                 .logIn(USER_EMAIL, USER_PASSWORD);
         Assert.assertEquals(mainPage.getUserCurrency(), USER_CURRENCY_AMD);
     }
 
-    @Test
+    @Test (groups = {"smokeTest"})
     public void sportRouteTest() {
         Assert.assertEquals(mainPage.getSportRoute(), sportRoute);
     }
 
-    @Test
+    @Test (groups = {"smokeTest"})
     public void inPlayRouteTest() {
         Assert.assertEquals(mainPage.getInPlayRoute(), inPlayRoute);
     }
 
-    @Test
+    @Test (groups = {"smokeTest"})
     public void esportRouteTest() {
         Assert.assertEquals(mainPage.getEsportRoute(), esportRoute);
     }
 
-    @Test
+    @Test (groups = {"smokeTest"})
     public void casinoRouteTest() {
         Assert.assertEquals(mainPage.getCasinoRoute(), casinoRoute);
     }
 
-    @Test
+    @Test (groups = {"smokeTest"})
     public void liveCsinoRouteTest() {
         Assert.assertEquals(mainPage.getLiveCasinoRoute(), liveCasinoRoute);
     }
 
-    @Test
+    @Test (groups = {"smokeTest"})
     public void gamesRouteTest() {
         Assert.assertEquals(mainPage.getGamesRoute(), gamesRoute);
     }
 
-    @Test
+    @Test (groups = {"smokeTest"})
     public void promotionsRouteTest() {
         Assert.assertEquals(mainPage.getPromotionsRoute(), promotionsRoute);
     }
 
-    @Test
+    @Test (groups = {"smokeTest"})
     public void virtualSportsRouteTest() {
         Assert.assertEquals(mainPage.getVirtualSportsRoute(), virtualSports);
     }

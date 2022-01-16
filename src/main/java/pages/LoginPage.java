@@ -30,9 +30,8 @@ public class LoginPage {
     public LoginPage logIn(String email, String password) {
         typeInEmailField(email);
         typeInPasswordField(password);
-        sleep(500);
         clickOnSigninButton();
-        sleep(500);
+        sleep(1000);
         return this;
     }
 

@@ -10,7 +10,7 @@ public class MainPageTests extends BaseTest implements PageProvider {
     String russian = "'Русский'";
 
 
-    @Test
+    @Test(groups = "smokeTest")
     public void switchToArmenianLanguageTest() {
         mainPage.changeAppLanguage(armenian);
         Assert.assertEquals(mainPage.getTextFromMainPage(), "Մեր մասին");
