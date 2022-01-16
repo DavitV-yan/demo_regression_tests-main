@@ -5,12 +5,13 @@ import org.testng.annotations.Test;
 
 import pages.MainPage;
 
+import static pages.PageProvider.mainPage;
+
 public class MainPageTests extends BaseTest {
     String armenian = "'Հայերեն'";
     String english = "'English'";
     String russian = "'Русский'";
 
-    MainPage mainPage = new MainPage();
 
     @Test
     public void switchToArmenianLanguageTest(){
