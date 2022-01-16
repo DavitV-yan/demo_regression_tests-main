@@ -77,17 +77,17 @@ public class MainPage extends LoginPage {
         return getCurrentUrl();
     }
 
-    public void clickOnLanguageDropDown(){
+    public void clickOnLanguageDropDown() {
         dropDown.first().click();
     }
 
-    public void changeAppLanguage(String language){
+    public void changeAppLanguage(String language) {
         clickOnLanguageDropDown();
-        SelenideElement selectLanguage = $x("//li[text()="+language+"]");
+        SelenideElement selectLanguage = $x("//li[text()=" + language + "]");
         selectLanguage.click();
     }
 
-    public String getTextFromMainPage(){
+    public String getTextFromMainPage() {
         return textForCheckingLanguage.getText();
     }
 
