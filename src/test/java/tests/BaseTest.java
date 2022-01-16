@@ -1,7 +1,9 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.*;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -9,8 +11,8 @@ import static data.TestData.BASE_URL;
 
 abstract public class BaseTest {
 
-    @BeforeClass(alwaysRun = true)
-    public void start() {
+    @BeforeSuite(alwaysRun = true)
+    public void setUpAll() {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
@@ -22,6 +24,11 @@ abstract public class BaseTest {
         // Configuration.assertionMode = AssertionMode.SOFT;
         Configuration.screenshots = false;
         Configuration.savePageSource = false;
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+
+    @BeforeClass(alwaysRun = true)
+    public void setUp(){
         open(BASE_URL);
         sleep(500);
     }
