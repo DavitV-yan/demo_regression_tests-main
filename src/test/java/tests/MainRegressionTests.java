@@ -19,7 +19,7 @@ public class MainRegressionTests extends BaseTest implements PageProvider {
     public void LogInTest() {
         mainPage.clickOnLoginButton()
                 .logIn(USER_EMAIL, USER_PASSWORD);
-        Assert.assertEquals(mainPage.getUserCurrency(), USER_CURRENCIES[0]);
+        Assert.assertEquals(mainPage.getUserCurrency(), USER_CURRENCY_AMD);
     }
 
     @Test
