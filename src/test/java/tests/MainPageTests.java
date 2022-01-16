@@ -2,12 +2,9 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.PageProvider;
 
-import pages.MainPage;
-
-import static pages.PageProvider.mainPage;
-
-public class MainPageTests extends BaseTest {
+public class MainPageTests extends BaseTest implements PageProvider {
     String armenian = "'Հայերեն'";
     String english = "'English'";
     String russian = "'Русский'";
@@ -16,18 +13,20 @@ public class MainPageTests extends BaseTest {
     @Test
     public void switchToArmenianLanguageTest(){
         mainPage.changeAppLanguage(armenian);
-        Assert.assertEquals(mainPage.getTextfromMainPage(), "Մեր մասին");
+        Assert.assertEquals(mainPage.getTextFromMainPage(), "Մեր մասին");
     }
 
     @Test
     public void switchToEnglishLanguageTest(){
         mainPage.changeAppLanguage(english);
-        Assert.assertEquals(mainPage.getTextfromMainPage(), "About");
+        Assert.assertEquals(mainPage.getTextFromMainPage(), "About");
     }
 
     @Test
     public void switchToRussianLanguageTest(){
         mainPage.changeAppLanguage(russian);
-        Assert.assertEquals(mainPage.getTextfromMainPage(), "О нас");
+        Assert.assertEquals(mainPage.getTextFromMainPage(), "О нас");
     }
+
+
 }

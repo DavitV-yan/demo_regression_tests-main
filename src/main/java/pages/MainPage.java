@@ -7,7 +7,6 @@ import com.codeborne.selenide.WebDriverRunner;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends LoginPage {
-    public String language;
     private SelenideElement loginButton = $("div > button");
     private SelenideElement userCurrencyType = $("[data-testid=balance-currency]");
     private SelenideElement sportRoute = $("nav > a:nth-child(1)");
@@ -88,7 +87,7 @@ public class MainPage extends LoginPage {
         selectLanguage.click();
     }
 
-    public String getTextfromMainPage(){
+    public String getTextFromMainPage(){
         return textForCheckingLanguage.getText();
     }
 

@@ -2,9 +2,9 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static pages.PageProvider.mainPage;
+import pages.PageProvider;
 
-public class MainRegressionTests extends BaseTest {
+public class MainRegressionTests extends BaseTest implements PageProvider {
 
     protected String userEmail = "davit.vardanyan@betconstruct.com";
     protected String userPassword = "Test1235";

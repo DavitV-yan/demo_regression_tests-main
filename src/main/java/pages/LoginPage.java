@@ -30,7 +30,7 @@ public class LoginPage {
         typeInEmailField(email);
         typeInPasswordField(password);
         clickOnSigninButton();
-        return new LoginPage();
+        return this;
     }
 
 }
