@@ -85,6 +85,7 @@ public class MainPage extends LoginPage {
         clickOnLanguageDropDown();
         SelenideElement selectLanguage = $x("//li[text()=" + language + "]");
         selectLanguage.click();
+        sleep(500);
     }
 
     public String getTextFromMainPage() {

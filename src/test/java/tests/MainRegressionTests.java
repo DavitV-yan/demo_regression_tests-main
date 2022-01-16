@@ -15,12 +15,26 @@ public class MainRegressionTests extends BaseTest implements PageProvider {
     private String promotionsRoute = "http://spv2-stage.betcoapps.com/promotions";
     private String virtualSports = "http://spv2-stage.betcoapps.com/virtual-sports";
 
-    @Test (groups = "regressionTest")
-    public void LogInTest() {
+    @Test (groups = "regressionTest", description = "Login test with valid user name and password")
+    public void LogInTestValidCredentials() {
         mainPage.clickOnLoginButton()
                 .logIn(USER_EMAIL, USER_PASSWORD);
         Assert.assertEquals(mainPage.getUserCurrency(), USER_CURRENCY_AMD);
     }
+
+//    @Test (groups = "regressionTest", description = "Login test with invalid user name and valid password")
+//    public void LogInTestInvalidUserName() {
+//        mainPage.clickOnLoginButton()
+//                .logIn(USER_PASSWORD, USER_PASSWORD);
+//        Assert.assertEquals(mainPage.getUserCurrency(), USER_CURRENCY_AMD);
+//    }
+//
+//    @Test (groups = "regressionTest", description = "Login test with valid user name and invalid password")
+//    public void LogInTestInvalidPassword() {
+//        mainPage.clickOnLoginButton()
+//                .logIn(USER_EMAIL, USER_EMAIL);
+//        Assert.assertEquals(mainPage.getUserCurrency(), USER_CURRENCY_AMD);
+//    }
 
     @Test (groups = {"smokeTest"})
     public void sportRouteTest() {
