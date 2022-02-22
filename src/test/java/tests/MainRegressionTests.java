@@ -1,8 +1,12 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.PageProvider;
+
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.sleep;
 import static data.TestData.*;
 
 public class MainRegressionTests extends BaseTest implements PageProvider {
@@ -14,6 +18,12 @@ public class MainRegressionTests extends BaseTest implements PageProvider {
     private String gamesRoute = "http://spv2-stage.betcoapps.com/games";
     private String promotionsRoute = "http://spv2-stage.betcoapps.com/promotions";
     private String virtualSports = "http://spv2-stage.betcoapps.com/virtual-sports";
+
+    @BeforeClass(alwaysRun = true)
+    public void setUp(){
+        open("http://localhost:3000/");
+        sleep(500);
+    }
 
     @Test (groups = "regressionTest", description = "Login test with valid user name and password")
     public void LogInTestValidCredentials() {
