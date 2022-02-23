@@ -10,6 +10,7 @@ public class LoginPage {
     private SelenideElement passwordField = $("#password");
     private SelenideElement signInButton = $("form > button");
     private SelenideElement signUpButton = $(":nth-child(1) > div > button > div");
+    private SelenideElement errorMessage = $(".danger > p");
 
     public void typeInEmailField(String email) {
         emailField.sendKeys(email);
@@ -33,6 +34,11 @@ public class LoginPage {
         clickOnSigninButton();
         sleep(1000);
         return this;
+    }
+
+    public String getErrorMessage(){
+        String text = errorMessage.getText();
+        return text;
     }
 
 }

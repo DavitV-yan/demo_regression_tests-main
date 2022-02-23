@@ -21,6 +21,7 @@ public class MainPage extends LoginPage {
 
     //first element for language drop-down second element for odds format drop-down
     private ElementsCollection dropDown = $$("[data-testid='selectLabel']");
+
     private SelenideElement armenianLanguage = $("[data-value='arm']");
     private SelenideElement englishLanguage = $("[data-value='eng']");
     private SelenideElement rusianLanguage = $("[data-value='rus']");
@@ -99,28 +100,7 @@ public class MainPage extends LoginPage {
     }
 
     public String getTextFromMainPage() {
+    
         return textForCheckingLanguage.getText();
     }
-
-//    public MainPage clickOnUserIcon() {
-//        userIcon.click();
-//        return this;
-//    }
-//
-//    public MainPage getUserName(String text) {
-//        userName.shouldHave(Condition.text(text));
-//        return this;
-//    }
-//
-//
-//    public MainPage selectAppLanguage(String text) {
-//        selectLanguage.selectOptionByValue(text);
-//        return this;
-//    }
-
-//    public MainPage getLanguageText(String text) {
-//        loginTitle.shouldHave(Condition.text(text));
-//        return this;
-//    }
-
 }

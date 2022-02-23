@@ -16,13 +16,13 @@ public class MainPageTests extends BaseTest implements PageProvider {
         Assert.assertEquals(mainPage.getTextFromMainPage(), "Մեր մասին");
     }
 
-    @Test
+    @Test(groups = "smokeTest")
     public void switchToEnglishLanguageTest() {
         mainPage.changeAppLanguage(english);
         Assert.assertEquals(mainPage.getTextFromMainPage(), "About");
     }
 
-    @Test
+    @Test(groups = "smokeTest")
     public void switchToRussianLanguageTest() {
         mainPage.changeAppLanguage(russian);
         Assert.assertEquals(mainPage.getTextFromMainPage(), "О нас");
