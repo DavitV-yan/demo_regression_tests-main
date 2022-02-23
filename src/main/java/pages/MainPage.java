@@ -20,7 +20,10 @@ public class MainPage extends LoginPage {
     private SelenideElement textForCheckingLanguage = $x("//*[@id='layout']/footer/div[1]/div[1]/div/p");
 
     //first element for language drop-down second element for odds format drop-down
-    private ElementsCollection dropDown = $$(".selectLabel");
+    private ElementsCollection dropDown = $$("[data-testid='selectLabel']");
+    private SelenideElement armenianLanguage = $("[data-value='arm']");
+    private SelenideElement englishLanguage = $("[data-value='eng']");
+    private SelenideElement rusianLanguage = $("[data-value='rus']");
     private SelenideElement oddsFormatDropDown = $("footer > div:nth-child(2) > div:nth-child(2) > div");
 
 
@@ -81,10 +84,17 @@ public class MainPage extends LoginPage {
         dropDown.first().click();
     }
 
-    public void changeAppLanguage(String language) {
+    public void changeAppLanguage(String lang) {
         clickOnLanguageDropDown();
-        SelenideElement selectLanguage = $x("//li[text()=" + language + "]");
-        selectLanguage.click();
+        if(lang == "arm"){
+        armenianLanguage.click();
+        }
+        else if(lang == "eng") {
+            englishLanguage.click();
+        }
+        else{
+            rusianLanguage.click();
+        }
         sleep(500);
     }
 
